@@ -1,2 +1,4 @@
 # FactorAnalyis
-Test...is it done?
+calcpchisq
+matrixification
+skreeplot
