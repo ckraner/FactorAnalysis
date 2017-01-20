@@ -12,14 +12,19 @@
 #' @param x2 Value for second fit
 #' @param df1 Degrees of freedom for first fit
 #' @param df2 Degrees of freedom for second fit
+#' @param lower.tail logical; if TRUE (default), probabilities are P[X<=x], otherwise, P[X>x].
 #' @return List consisting of: differince in fit; difference in degrees of freedom; p-value of Chi-Sq test
 #' @export
 #' @examples
 #' PreviousChiSq=with(PreviousFit,calcpchisq(null.model,objective,null.dof,dof))
-calcpchisq=function(x1,x2,df1,df2){
+calcpchisq=function(x1,x2,df1,df2, lower.tail){
   dx=x1-x2
   df=df1-df2
-  chi=pchisq(dx,df)
+  if (lower.tail == FALSE){
+    chi=pchisq(dx,df,lower.tail=FALSE)
+  }else{
+    chi=pchisq(dx,df)
+  }
   newList=list("dx"=dx,"df"=df,"chi"=chi)
   return(newList)
 }

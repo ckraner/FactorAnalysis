@@ -4,7 +4,7 @@
 \alias{calcpchisq}
 \title{Creates a list of values relating to Chi-Sq Tests.}
 \usage{
-calcpchisq(x1, x2, df1, df2)
+calcpchisq(x1, x2, df1, df2, lower.tail)
 }
 \arguments{
 \item{x1}{Value for first fit}
@@ -14,6 +14,8 @@ calcpchisq(x1, x2, df1, df2)
 \item{df1}{Degrees of freedom for first fit}
 
 \item{df2}{Degrees of freedom for second fit}
+
+\item{lower.tail}{logical; if TRUE (default), probabilities are P[X<=x], otherwise, P[X>x].}
 }
 \value{
 List consisting of: differince in fit; difference in degrees of freedom; p-value of Chi-Sq test
